@@ -11,6 +11,9 @@ public class PrimitiveOreGenerator implements IWorldGenerator {
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        System.out.println("PrimitiveOreGen chunk: " + chunkX + ", " + chunkZ);
+
+        if (Math.floorMod(chunkX, 3) == 1 && Math.floorMod(chunkZ, 3) == 1) {
+            System.out.println("Ore Region Center Chunk: " + chunkX + ", " + chunkZ);
+        }
     }
 }
