@@ -1,9 +1,12 @@
 package com.SprintXXL.primitiveoregen;
 
+import com.SprintXXL.primitiveoregen.worldgen.PrimitiveOreGenerator;
+import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = PrimitiveOreGen.MODID, name = PrimitiveOreGen.NAME, version = PrimitiveOreGen.VERSION)
@@ -24,5 +27,6 @@ public class PrimitiveOreGen
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+      GameRegistry.registerWorldGenerator(new PrimitiveOreGenerator(), 0);
     }
 }
