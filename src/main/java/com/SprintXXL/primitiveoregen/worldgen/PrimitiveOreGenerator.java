@@ -20,11 +20,24 @@ public class PrimitiveOreGenerator implements IWorldGenerator {
             int blockY = 40;
             int blockZ = chunkZ * 16 + 8;
 
-            world.setBlockState(
-                    new BlockPos(blockX, blockY, blockZ),
-                    Blocks.IRON_ORE.getDefaultState()
-            );
-            System.out.println("Ore Region Center Chunk: " + chunkX + ", " + chunkZ);
+            for (int offsetX = -10; offsetX <= 10; offsetX++) {
+                for (int offsetY = -1; offsetY <= 2; offsetY++) {
+                    for (int offsetZ = -10; offsetZ <= 10; offsetZ++) {
+
+                        if (random.nextBoolean()) {
+                            world.setBlockState(
+                                    new BlockPos(blockX + offsetX, blockY + offsetY, blockZ + offsetZ),
+                                    Blocks.IRON_ORE.getDefaultState());
+                        }
+                        else {
+                            world.setBlockState(
+                                    new BlockPos(blockX + offsetX, blockY + offsetY, blockZ + offsetZ),
+                                    Blocks.STONE.getDefaultState()
+                            );
+                        }
+                    }
+                }
+            }
         }
     }
 }
