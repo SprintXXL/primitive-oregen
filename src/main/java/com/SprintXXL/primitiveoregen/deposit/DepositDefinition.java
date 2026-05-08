@@ -17,13 +17,17 @@ public class DepositDefinition {
     public int cellSizeY;
     public int cellSizeZ;
 
+    // Deposit "Y" Range
+    public int minY;
+    public int maxY;
+
     // Ores per cell
     public int oresPerCell;
 
     // Ore deposit weight
     public int weight;
 
-    public DepositDefinition(IBlockState blockState, int radiusX, int radiusY, int radiusZ, int cellSizeX, int cellSizeY, int cellSizeZ, int oresPerCell, int weight) {
+    public DepositDefinition(IBlockState blockState, int radiusX, int radiusY, int radiusZ, int cellSizeX, int cellSizeY, int cellSizeZ, int minY, int maxY, int oresPerCell, int weight) {
 
         this.blockState = blockState;
 
@@ -34,6 +38,9 @@ public class DepositDefinition {
         this.cellSizeX = cellSizeX;
         this.cellSizeY = cellSizeY;
         this.cellSizeZ = cellSizeZ;
+
+        this.minY = minY;
+        this.maxY = maxY;
 
         this.oresPerCell = oresPerCell;
 
