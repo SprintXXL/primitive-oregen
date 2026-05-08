@@ -1,6 +1,11 @@
 package com.SprintXXL.primitiveoregen.deposit;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class DepositDefinition {
 
@@ -46,4 +51,9 @@ public class DepositDefinition {
 
         this.weight = weight;
     }
+
+    public List<Block> REPLACEABLE_BLOCKS =
+            Arrays.asList(
+                    Blocks.STONE
+            );
 }

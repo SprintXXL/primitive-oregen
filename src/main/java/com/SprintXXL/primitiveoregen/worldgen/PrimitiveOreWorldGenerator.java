@@ -7,8 +7,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
-
 import java.util.Random;
+
+import static com.SprintXXL.primitiveoregen.Config.DEBUG_SURFACE_MODE;
 
 public class PrimitiveOreWorldGenerator implements IWorldGenerator {
 
@@ -21,7 +22,14 @@ public class PrimitiveOreWorldGenerator implements IWorldGenerator {
 
             DepositDefinition chosenDeposit = DepositRegistry.getRandomDeposit(random);
 
-            int centerY = chosenDeposit.minY + random.nextInt(chosenDeposit.maxY - chosenDeposit.minY + 1);
+            int centerY;
+
+            if (DEBUG_SURFACE_MODE) {
+                centerY = 30;
+            }
+            else {
+                centerY = chosenDeposit.minY + random.nextInt(chosenDeposit.maxY - chosenDeposit.minY + 1);
+            }
 
             DepositGenerator.generateDeposit(
                     world,

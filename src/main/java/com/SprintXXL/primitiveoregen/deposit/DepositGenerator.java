@@ -6,6 +6,8 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+import static com.SprintXXL.primitiveoregen.Config.DEBUG_SURFACE_MODE;
+
 public class DepositGenerator {
 
     public static void generateDeposit(World world, Random random, int centerX, int centerY, int centerZ, DepositDefinition definition) {
@@ -39,7 +41,9 @@ public class DepositGenerator {
                     centerZ + cellZ + localZ
             );
 
-            world.setBlockState(pos, definition.blockState);
+            if (DEBUG_SURFACE_MODE || world.getBlockState(pos).getBlock() == Blocks.STONE) {
+                world.setBlockState(pos, definition.blockState);
+            }
         }
     }
 }
