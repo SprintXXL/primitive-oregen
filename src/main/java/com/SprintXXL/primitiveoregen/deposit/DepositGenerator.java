@@ -39,7 +39,7 @@ public class DepositGenerator {
                     centerZ + cellZ + localZ
             );
 
-            world.setBlockState(pos, Blocks.IRON_ORE.getDefaultState());
+            world.setBlockState(pos, definition.blockState);
         }
     }
 }

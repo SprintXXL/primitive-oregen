@@ -1,6 +1,11 @@
 package com.SprintXXL.primitiveoregen.deposit;
 
+import net.minecraft.block.state.IBlockState;
+
 public class DepositDefinition {
+
+    // Ores per cell
+    public int oresPerCell;
 
     // Radius of ore deposit
     public int radiusX;
@@ -12,10 +17,12 @@ public class DepositDefinition {
     public int cellSizeY;
     public int cellSizeZ;
 
-    // Ores per cell
-    public int oresPerCell;
+    // Ore block
+    public IBlockState blockState;
 
-    public DepositDefinition(int radiusX, int radiusY, int radiusZ, int cellSizeX, int cellSizeY, int cellSizeZ, int oresPerCell) {
+    public DepositDefinition(IBlockState blockState, int radiusX, int radiusY, int radiusZ, int cellSizeX, int cellSizeY, int cellSizeZ, int oresPerCell) {
+
+        this.blockState = blockState;
 
         this.radiusX = radiusX;
         this.radiusY = radiusY;
