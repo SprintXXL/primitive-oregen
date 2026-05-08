@@ -4,8 +4,8 @@ import net.minecraft.block.state.IBlockState;
 
 public class DepositDefinition {
 
-    // Ores per cell
-    public int oresPerCell;
+    // Ore block
+    public IBlockState blockState;
 
     // Radius of ore deposit
     public int radiusX;
@@ -17,10 +17,13 @@ public class DepositDefinition {
     public int cellSizeY;
     public int cellSizeZ;
 
-    // Ore block
-    public IBlockState blockState;
+    // Ores per cell
+    public int oresPerCell;
 
-    public DepositDefinition(IBlockState blockState, int radiusX, int radiusY, int radiusZ, int cellSizeX, int cellSizeY, int cellSizeZ, int oresPerCell) {
+    // Ore deposit weight
+    public int weight;
+
+    public DepositDefinition(IBlockState blockState, int radiusX, int radiusY, int radiusZ, int cellSizeX, int cellSizeY, int cellSizeZ, int oresPerCell, int weight) {
 
         this.blockState = blockState;
 
@@ -33,5 +36,7 @@ public class DepositDefinition {
         this.cellSizeZ = cellSizeZ;
 
         this.oresPerCell = oresPerCell;
+
+        this.weight = weight;
     }
 }

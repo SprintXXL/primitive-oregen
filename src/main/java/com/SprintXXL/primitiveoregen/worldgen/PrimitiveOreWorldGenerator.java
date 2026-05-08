@@ -1,5 +1,6 @@
 package com.SprintXXL.primitiveoregen.worldgen;
 
+import com.SprintXXL.primitiveoregen.deposit.DepositDefinition;
 import com.SprintXXL.primitiveoregen.deposit.DepositGenerator;
 import com.SprintXXL.primitiveoregen.deposit.DepositRegistry;
 import net.minecraft.world.World;
@@ -19,7 +20,16 @@ public class PrimitiveOreWorldGenerator implements IWorldGenerator {
             int centerY = 40;
             int centerZ = chunkZ * 16 + 8;
 
-            DepositGenerator.generateDeposit(world, random, centerX, centerY, centerZ, DepositRegistry.IRON_DEPOSIT);
+            DepositDefinition chosenDeposit = DepositRegistry.getRandomDeposit(random);
+
+            DepositGenerator.generateDeposit(
+                    world,
+                    random,
+                    centerX,
+                    centerY,
+                    centerZ,
+                    chosenDeposit
+            );
         }
     }
 }
