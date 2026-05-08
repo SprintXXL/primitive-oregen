@@ -1,7 +1,6 @@
 package com.SprintXXL.primitiveoregen;
 
-import com.SprintXXL.primitiveoregen.worldgen.PrimitiveOreGenerator;
-import net.minecraftforge.fml.common.IWorldGenerator;
+import com.SprintXXL.primitiveoregen.worldgen.PrimitiveOreWorldGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,6 +26,6 @@ public class PrimitiveOreGen
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-      GameRegistry.registerWorldGenerator(new PrimitiveOreGenerator(), 0);
+      GameRegistry.registerWorldGenerator(new PrimitiveOreWorldGenerator(), 0);
     }
 }

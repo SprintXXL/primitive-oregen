@@ -1,29 +1,14 @@
-package com.SprintXXL.primitiveoregen.worldgen;
+package com.SprintXXL.primitiveoregen.deposit;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-public class PrimitiveOreGenerator implements IWorldGenerator {
+public class DepositGenerator {
 
-    @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world,
-                         IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        if (Math.floorMod(chunkX, 3) == 1 && Math.floorMod(chunkZ, 3) == 1) {
-            int centerX = chunkX * 16 + 8;
-            int centerY = 40;
-            int centerZ = chunkZ * 16 + 8;
-
-            generateIronDeposit(world, random, centerX, centerY, centerZ);
-        }
-    }
-
-    public void generateIronDeposit(World world, Random random, int centerX, int centerY, int centerZ) {
+    public static void generateIronDeposit(World world, Random random, int centerX, int centerY, int centerZ) {
 
         // Full deposit size
         int radiusX = 9;
@@ -45,10 +30,10 @@ public class PrimitiveOreGenerator implements IWorldGenerator {
         }
     }
 
-    public void generateOreCell(World world, Random random, int centerX, int centerY, int centerZ,
+    public static void generateOreCell(World world, Random random, int centerX, int centerY, int centerZ,
                                 int cellX, int cellY, int cellZ, int cellSizeX, int cellSizeY, int cellSizeZ) {
 
-        int oresPerCell = 2;
+        int oresPerCell = 12;
 
         for (int i = 0; i < oresPerCell; i++) {
 
