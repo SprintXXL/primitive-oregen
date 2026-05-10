@@ -1,27 +1,14 @@
 package com.SprintXXL.primitiveoregen.deposit;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import static com.SprintXXL.primitiveoregen.deposit.DepositBlocks.getBlockState;
+
 public class DepositRegistry {
-
-    private static IBlockState getBlockState(String modid, String name) {
-        Block block = ForgeRegistries.BLOCKS.getValue(
-                new ResourceLocation(modid, name)
-        );
-
-        System.out.println("[PrimitiveOreGen] Looking up block" + modid + ":" + name);
-        System.out.println("[PrimitiveOreGen] Result: " + block);
-
-        return block.getDefaultState();
-    }
 
     public static final DepositDefinition IRON_DEPOSIT =
             new DepositDefinition(
@@ -50,8 +37,6 @@ public class DepositRegistry {
             );
 
     public static DepositDefinition getRandomDeposit(Random random) {
-
-        System.out.println("[PrimitiveOreGen] Selecting Deposit");
 
         int totalWeight = 0;
 
