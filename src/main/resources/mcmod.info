@@ -1,7 +1,7 @@
 [
 {
   "modid": "primitiveoregen",
-  "name": "Primitive Ore Gen",
+  "name": "Primitive OreGen",
   "description": "Adds Custom Ore Generation to Primitive Ascent Modpack.",
   "version": "0.1.0",
   "mcversion": "1.12.2",
