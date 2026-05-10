@@ -1,7 +1,5 @@
 package com.SprintXXL.primitiveoregen.deposit;
 
-import net.minecraft.init.Blocks;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -13,27 +11,49 @@ public class DepositRegistry {
     public static final DepositDefinition IRON_DEPOSIT =
             new DepositDefinition(
                     getBlockState("primitiveores", "iron_ore"), // Ore to Place
-                    9,4,9, // Ore Radius X,Y,Z
+                    15,4,15, // Ore Radius X,Y,Z
                     3,3,3, // Cell Dimensions X,Y,Z
                     20,30, // Ore Deposit Min Y, Max Y
-                    12, // Ores per Cell
+                    17, // Ores per Cell
                     10 // Deposit weight
             );
 
-    public static final DepositDefinition GOLD_DEPOSIT =
+    public static final DepositDefinition COAL_DEPOSIT =
             new DepositDefinition(
-                    Blocks.GOLD_ORE.getDefaultState(),
-                    9,4,9,
+                    getBlockState("primitiveores", "coal_ore"),
+                    15,4,15,
                     3,3,3,
                     40,50,
-                    12,
+                    17,
+                    5
+            );
+
+    public static final DepositDefinition COPPER_DEPOSIT =
+            new DepositDefinition(
+                    getBlockState("primitiveores", "copper_ore"),
+                    15,4,15,
+                    3,3,3,
+                    20,30,
+                    17,
                     10
+            );
+
+    public static final DepositDefinition TIN_DEPOSIT =
+            new DepositDefinition(
+                    getBlockState("primitiveores", "tin_ore"),
+                    15,4,15,
+                    3,3,3,
+                    40,50,
+                    17,
+                    5
             );
 
     public static final List<DepositDefinition> ALL_DEPOSITS =
             Arrays.asList(
                     IRON_DEPOSIT,
-                    GOLD_DEPOSIT
+                    COAL_DEPOSIT,
+                    COPPER_DEPOSIT,
+                    TIN_DEPOSIT
             );
 
     public static DepositDefinition getRandomDeposit(Random random) {
