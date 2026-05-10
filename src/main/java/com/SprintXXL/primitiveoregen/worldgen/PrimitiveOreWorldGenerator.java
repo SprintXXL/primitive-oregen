@@ -16,6 +16,9 @@ public class PrimitiveOreWorldGenerator implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world,
                          IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+
+        System.out.println("Generating World");
+
         if (Math.floorMod(chunkX, 3) == 1 && Math.floorMod(chunkZ, 3) == 1) {
             int centerX = chunkX * 16 + 8;
             int centerZ = chunkZ * 16 + 8;
