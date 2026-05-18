@@ -13,7 +13,7 @@ public class PrimitiveOreGen
 {
     public static final String MODID = "primitiveoregen";
     public static final String NAME = "Primitive Ore Gen";
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.4.0";
 
     private static Logger logger;
 

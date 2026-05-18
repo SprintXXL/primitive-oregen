@@ -13,7 +13,7 @@ public class DepositRegistry {
                     getBlockState("primitiveores", "iron_ore"), // Ore to Place
                     15,4,15, // Ore Radius X,Y,Z
                     3,3,3, // Cell Dimensions X,Y,Z
-                    20,30, // Ore Deposit Min Y, Max Y
+                    30,40, // Ore Deposit Min Y, Max Y
                     17, // Ores per Cell
                     10 // Deposit weight
             );
@@ -23,7 +23,7 @@ public class DepositRegistry {
                     getBlockState("primitiveores", "coal_ore"),
                     15,4,15,
                     3,3,3,
-                    40,50,
+                    30,40,
                     17,
                     5
             );
@@ -33,7 +33,7 @@ public class DepositRegistry {
                     getBlockState("primitiveores", "copper_ore"),
                     15,4,15,
                     3,3,3,
-                    20,30,
+                    30,40,
                     17,
                     10
             );
@@ -43,7 +43,7 @@ public class DepositRegistry {
                     getBlockState("primitiveores", "tin_ore"),
                     15,4,15,
                     3,3,3,
-                    40,50,
+                    30,40,
                     17,
                     5
             );
