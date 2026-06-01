@@ -1,15 +1,16 @@
 package com.SprintXXL.primitiveoregen.worldgen;
 
-import com.SprintXXL.primitiveoregen.deposit.DepositDefinition;
-import com.SprintXXL.primitiveoregen.deposit.DepositGenerator;
-import com.SprintXXL.primitiveoregen.deposit.DepositRegistry;
+import com.SprintXXL.primitiveoregen.library.data.DepositDefinition;
+import com.SprintXXL.primitiveoregen.library.logic.DepositGenerator;
+import com.SprintXXL.primitiveoregen.library.registry.DepositRegistry;
+import com.SprintXXL.primitiveoregen.util.OreGenHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import java.util.Random;
 
-import static com.SprintXXL.primitiveoregen.Config.DEBUG_SURFACE_MODE;
+import static com.SprintXXL.primitiveoregen.util.Config.DEBUG_SURFACE_MODE;
 
 public class PrimitiveOreWorldGenerator implements IWorldGenerator {
 
@@ -17,9 +18,7 @@ public class PrimitiveOreWorldGenerator implements IWorldGenerator {
     public void generate(Random random, int chunkX, int chunkZ, World world,
                          IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 
-        System.out.println("Generating World");
-
-        if (Math.floorMod(chunkX, 3) == 1 && Math.floorMod(chunkZ, 3) == 1) {
+        if (OreGenHelper.isDepositChunk(chunkX, chunkZ)) {
             int centerX = chunkX * 16 + 8;
             int centerZ = chunkZ * 16 + 8;
 
@@ -31,7 +30,7 @@ public class PrimitiveOreWorldGenerator implements IWorldGenerator {
                 centerY = 30;
             }
             else {
-                centerY = chosenDeposit.minY + random.nextInt(chosenDeposit.maxY - chosenDeposit.minY + 1);
+                centerY = chosenDeposit.getRange().getMinY() + random.nextInt(chosenDeposit.getRange().getMaxY() - chosenDeposit.getRange().getMinY() + 1);
             }
 
             DepositGenerator.generateDeposit(
