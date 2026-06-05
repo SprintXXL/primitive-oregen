@@ -7,17 +7,18 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = "required-after:primitiveores")
+import static com.SprintXXL.primitiveoregen.Reference.*;
+
+@Mod(
+        modid = MODID,
+        name = NAME,
+        version = VERSION,
+        dependencies = "required-after:primitiveores")
 public class PrimitiveOreGen {
-
-    private static Logger logger;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
-        logger = event.getModLog();
 
         DepositRegistry.init();
     }

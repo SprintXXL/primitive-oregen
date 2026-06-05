@@ -5,6 +5,7 @@ import com.SprintXXL.primitiveoregen.library.util.DepositDensity;
 import com.SprintXXL.primitiveoregen.library.util.DepositShape;
 import com.SprintXXL.primitiveores.library.OreDefinition;
 import com.SprintXXL.primitiveores.library.OreRegistry;
+import com.SprintXXL.primitiveores.library.util.OreForm;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -73,7 +74,7 @@ public class DepositGenerator {
                 ore = deposit.getTraceOre();
             }
 
-            Block oreBlock = OreRegistry.getOreBlock(ore);
+            Block oreBlock = OreRegistry.getBlock(OreForm.ORE_BLOCK, ore);
 
             if (oreBlock != null) {
                 world.setBlockState(pos, oreBlock.getDefaultState());
