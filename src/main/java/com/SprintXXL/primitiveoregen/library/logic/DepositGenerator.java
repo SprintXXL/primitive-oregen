@@ -3,9 +3,7 @@ package com.SprintXXL.primitiveoregen.library.logic;
 import com.SprintXXL.primitiveoregen.library.data.DepositDefinition;
 import com.SprintXXL.primitiveoregen.library.util.DepositDensity;
 import com.SprintXXL.primitiveoregen.library.util.DepositShape;
-import com.SprintXXL.primitiveores.library.OreDefinition;
-import com.SprintXXL.primitiveores.library.OreRegistry;
-import com.SprintXXL.primitiveores.library.util.OreForm;
+import com.sprintxxl.ascentresourcerecipeindex.resources.Resource;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -62,7 +60,7 @@ public class DepositGenerator {
 
             float oreRoll = random.nextFloat();
 
-            OreDefinition ore;
+            Resource ore;
 
             if (oreRoll < 0.70F) {
                 ore = deposit.getPrimaryOre();
@@ -74,7 +72,7 @@ public class DepositGenerator {
                 ore = deposit.getTraceOre();
             }
 
-            Block oreBlock = OreRegistry.getBlock(OreForm.ORE_BLOCK, ore);
+            Block oreBlock = ore.getBlock();
 
             if (oreBlock != null) {
                 world.setBlockState(pos, oreBlock.getDefaultState());

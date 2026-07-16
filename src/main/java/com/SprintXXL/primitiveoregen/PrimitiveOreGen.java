@@ -10,11 +10,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import static com.SprintXXL.primitiveoregen.Reference.*;
 
-@Mod(
-        modid = MODID,
-        name = NAME,
-        version = VERSION,
-        dependencies = "required-after:primitiveores")
+@Mod(modid = MODID, name = NAME, version = VERSION)
 public class PrimitiveOreGen {
 
     @EventHandler

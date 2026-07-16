@@ -3,7 +3,7 @@ package com.SprintXXL.primitiveoregen.library.data;
 import com.SprintXXL.primitiveoregen.library.util.DepositShape;
 import com.SprintXXL.primitiveoregen.library.util.DepositWeight;
 import com.SprintXXL.primitiveoregen.library.util.DepositRange;
-import com.SprintXXL.primitiveores.library.OreDefinition;
+import com.sprintxxl.ascentresourcerecipeindex.resources.Resource;
 
 public class DepositDefinition {
 
@@ -11,18 +11,18 @@ public class DepositDefinition {
     private final DepositShape shape;
     private final DepositWeight weight;
     private final DepositRange range;
-    private final OreDefinition primaryOre;
-    private final OreDefinition secondaryOre;
-    private final OreDefinition traceOre;
+    private final Resource primaryOre;
+    private final Resource secondaryOre;
+    private final Resource traceOre;
 
     public DepositDefinition(
             String id,
             DepositShape shape,
             DepositWeight weight,
             DepositRange range,
-            OreDefinition primaryOre,
-            OreDefinition secondaryOre,
-            OreDefinition traceOre
+            Resource primaryOre,
+            Resource secondaryOre,
+            Resource traceOre
     ) {
         this.id = id;
         this.shape = shape;
@@ -49,15 +49,15 @@ public class DepositDefinition {
         return range;
     }
 
-    public OreDefinition getPrimaryOre() {
+    public Resource getPrimaryOre() {
         return primaryOre;
     }
 
-    public OreDefinition getSecondaryOre() {
+    public Resource getSecondaryOre() {
         return secondaryOre;
     }
 
-    public OreDefinition getTraceOre() {
+    public Resource getTraceOre() {
         return traceOre;
     }
 }

@@ -5,7 +5,7 @@ import com.SprintXXL.primitiveoregen.library.data.DepositIDs;
 import com.SprintXXL.primitiveoregen.library.util.DepositShape;
 import com.SprintXXL.primitiveoregen.library.util.DepositWeight;
 import com.SprintXXL.primitiveoregen.library.util.DepositRange;
-import com.SprintXXL.primitiveores.library.ModOres;
+import com.sprintxxl.ascentresourcerecipeindex.resources.definitions.ModResources;
 
 public final class ModDeposits {
 
@@ -17,9 +17,9 @@ public final class ModDeposits {
                     DepositShape.STANDARD,
                     DepositWeight.COMMON,
                     DepositRange.NORMAL,
-                    ModOres.MAGNETITE,
-                    ModOres.MAGNETITE,
-                    ModOres.GOLD
+                    ModResources.MAGNETITE_ORE,
+                    ModResources.MAGNETITE_ORE,
+                    ModResources.GOLD_ORE
             );
 
     public static final DepositDefinition CHALCOPYRITE_DEPOSIT =
@@ -28,9 +28,9 @@ public final class ModDeposits {
                     DepositShape.STANDARD,
                     DepositWeight.COMMON,
                     DepositRange.NORMAL,
-                    ModOres.CHALCOPYRITE,
-                    ModOres.CHALCOPYRITE,
-                    ModOres.PYRITE
+                    ModResources.CHALCOPYRITE_ORE,
+                    ModResources.CHALCOPYRITE_ORE,
+                    ModResources.PYRITE_ORE
             );
 
     public static final DepositDefinition CASSITERITE_DEPOSIT =
@@ -39,9 +39,9 @@ public final class ModDeposits {
                     DepositShape.STANDARD,
                     DepositWeight.COMMON,
                     DepositRange.NORMAL,
-                    ModOres.CASSITERITE,
-                    ModOres.CASSITERITE,
-                    ModOres.PYRITE
+                    ModResources.CASSITERITE_ORE,
+                    ModResources.CASSITERITE_ORE,
+                    ModResources.PYRITE_ORE
             );
 
     public static final DepositDefinition COAL_DEPOSIT =
@@ -50,9 +50,9 @@ public final class ModDeposits {
                     DepositShape.STANDARD,
                     DepositWeight.COMMON,
                     DepositRange.NORMAL,
-                    ModOres.COAL,
-                    ModOres.COAL,
-                    ModOres.LIGNITE_COAL
+                    ModResources.COAL_ORE,
+                    ModResources.COAL_ORE,
+                    ModResources.LIGNITE_COAL_ORE
             );
 
     public static final DepositDefinition REDSTONE_DEPOSIT =
@@ -61,8 +61,8 @@ public final class ModDeposits {
                     DepositShape.STANDARD,
                     DepositWeight.COMMON,
                     DepositRange.NORMAL,
-                    ModOres.REDSTONE,
-                    ModOres.REDSTONE,
-                    ModOres.CINNABAR
+                    ModResources.REDSTONE_ORE,
+                    ModResources.REDSTONE_ORE,
+                    ModResources.CINNABAR
             );
 }
