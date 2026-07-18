@@ -1,28 +1,29 @@
-package com.SprintXXL.primitiveoregen.library.data;
+package com.SprintXXL.primitiveoregen.library;
 
 import com.SprintXXL.primitiveoregen.library.util.DepositShape;
 import com.SprintXXL.primitiveoregen.library.util.DepositWeight;
 import com.SprintXXL.primitiveoregen.library.util.DepositRange;
-import com.sprintxxl.ascentresourcerecipeindex.resources.Resource;
+import com.sprintxxl.ascenthub.definitions.AscentDefinition;
+import com.sprintxxl.ascentresourcerecipeindex.resources.AscentResource;
 
-public class DepositDefinition {
+public class Deposit implements AscentDefinition {
 
     private final String id;
     private final DepositShape shape;
     private final DepositWeight weight;
     private final DepositRange range;
-    private final Resource primaryOre;
-    private final Resource secondaryOre;
-    private final Resource traceOre;
+    private final AscentResource primaryOre;
+    private final AscentResource secondaryOre;
+    private final AscentResource traceOre;
 
-    public DepositDefinition(
+    public Deposit(
             String id,
             DepositShape shape,
             DepositWeight weight,
             DepositRange range,
-            Resource primaryOre,
-            Resource secondaryOre,
-            Resource traceOre
+            AscentResource primaryOre,
+            AscentResource secondaryOre,
+            AscentResource traceOre
     ) {
         this.id = id;
         this.shape = shape;
@@ -33,6 +34,7 @@ public class DepositDefinition {
         this.traceOre = traceOre;
     }
 
+    @Override
     public String getID() {
         return id;
     }
@@ -49,15 +51,15 @@ public class DepositDefinition {
         return range;
     }
 
-    public Resource getPrimaryOre() {
+    public AscentResource getPrimaryOre() {
         return primaryOre;
     }
 
-    public Resource getSecondaryOre() {
+    public AscentResource getSecondaryOre() {
         return secondaryOre;
     }
 
-    public Resource getTraceOre() {
+    public AscentResource getTraceOre() {
         return traceOre;
     }
 }

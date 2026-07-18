@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import static com.SprintXXL.primitiveoregen.Reference.*;
+import static com.SprintXXL.primitiveoregen.ascent.OreGenDefinitionProvider.initOreGenDefinitionProvider;
 
 @Mod(modid = MODID, name = NAME, version = VERSION)
 public class PrimitiveOreGen {
@@ -16,7 +17,10 @@ public class PrimitiveOreGen {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        DepositRegistry.init();
+        DepositRegistry.initDepositRegistry();
+
+        // HUB \\
+        initOreGenDefinitionProvider();
     }
 
     @EventHandler

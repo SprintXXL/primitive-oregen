@@ -1,9 +1,9 @@
 package com.SprintXXL.primitiveoregen.library.logic;
 
-import com.SprintXXL.primitiveoregen.library.data.DepositDefinition;
+import com.SprintXXL.primitiveoregen.library.Deposit;
 import com.SprintXXL.primitiveoregen.library.util.DepositDensity;
 import com.SprintXXL.primitiveoregen.library.util.DepositShape;
-import com.sprintxxl.ascentresourcerecipeindex.resources.Resource;
+import com.sprintxxl.ascentresourcerecipeindex.resources.AscentResource;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +15,7 @@ import static com.SprintXXL.primitiveoregen.util.Config.DEBUG_SURFACE_MODE;
 
 public class DepositGenerator {
 
-    public static void generateDeposit(World world, Random random, int centerX, int centerY, int centerZ, DepositDefinition deposit) {
+    public static void generateDeposit(World world, Random random, int centerX, int centerY, int centerZ, Deposit deposit) {
 
         DepositShape shape = deposit.getShape();
         DepositDensity density = DepositDensity.STANDARD;
@@ -31,7 +31,7 @@ public class DepositGenerator {
     }
 
     public static void generateOreCell(World world, Random random, int centerX, int centerY, int centerZ, int cellX, int cellY, int cellZ,
-                                       DepositDefinition deposit, DepositDensity density) {
+                                       Deposit deposit, DepositDensity density) {
 
         DepositShape shape = deposit.getShape();
 
@@ -60,7 +60,7 @@ public class DepositGenerator {
 
             float oreRoll = random.nextFloat();
 
-            Resource ore;
+            AscentResource ore;
 
             if (oreRoll < 0.70F) {
                 ore = deposit.getPrimaryOre();

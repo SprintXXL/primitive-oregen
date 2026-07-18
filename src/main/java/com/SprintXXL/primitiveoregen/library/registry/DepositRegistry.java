@@ -1,39 +1,40 @@
 package com.SprintXXL.primitiveoregen.library.registry;
 
-import com.SprintXXL.primitiveoregen.library.data.DepositDefinition;
-import com.SprintXXL.primitiveoregen.library.defaults.ModDeposits;
+import com.SprintXXL.primitiveoregen.library.Deposit;
 
 import java.util.*;
+
+import static com.SprintXXL.primitiveoregen.library.definitions.ModDeposits.initDepositDefinitions;
 
 public final class DepositRegistry {
 
     private DepositRegistry() {}
 
-    private static final Map<String, DepositDefinition> DEPOSITS =
+    private static final Map<String, Deposit> DEPOSITS =
             new HashMap<>();
 
-    private static final List<DepositDefinition> ALL_DEPOSITS =
+    private static final List<Deposit> ALL_DEPOSITS =
             new ArrayList<>();
 
-    public static List<DepositDefinition> getAllDeposits() {
+    public static List<Deposit> getAllDeposits() {
         return Collections.unmodifiableList(ALL_DEPOSITS);
     }
 
-    public static DepositDefinition getDeposit(String id) {
+    public static Deposit getDeposit(String id) {
         return DEPOSITS.get(id);
     }
 
-    public static DepositDefinition getRandomDeposit(Random random) {
+    public static Deposit getRandomDeposit(Random random) {
 
         int totalWeight = 0;
 
-        for (DepositDefinition deposit : ALL_DEPOSITS) {
+        for (Deposit deposit : ALL_DEPOSITS) {
             totalWeight += deposit.getWeight().getWeight();
         }
 
         int roll = random.nextInt(totalWeight);
 
-        for (DepositDefinition deposit : ALL_DEPOSITS) {
+        for (Deposit deposit : ALL_DEPOSITS) {
 
             roll -= deposit.getWeight().getWeight();
 
@@ -45,18 +46,13 @@ public final class DepositRegistry {
         return ALL_DEPOSITS.get(0);
     }
 
-    public static void register(DepositDefinition deposit) {
+    public static void register(Deposit deposit) {
         DEPOSITS.put(deposit.getID(), deposit);
         ALL_DEPOSITS.add(deposit);
     }
 
-    public static void init() {
+    public static void initDepositRegistry() {
 
-        register(ModDeposits.MAGNETITE_DEPOSIT);
-        register(ModDeposits.CHALCOPYRITE_DEPOSIT);
-        register(ModDeposits.CASSITERITE_DEPOSIT);
-        register(ModDeposits.COAL_DEPOSIT);
-        register(ModDeposits.REDSTONE_DEPOSIT);
-
+        initDepositDefinitions(DepositRegistry::register);
     }
 }

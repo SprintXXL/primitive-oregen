@@ -1,4 +1,4 @@
-package com.SprintXXL.primitiveoregen.library.data;
+package com.SprintXXL.primitiveoregen.library.definitions;
 
 public final class DepositIDs {
 

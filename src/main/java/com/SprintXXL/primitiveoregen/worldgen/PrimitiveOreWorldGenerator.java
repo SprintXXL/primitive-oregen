@@ -1,6 +1,6 @@
 package com.SprintXXL.primitiveoregen.worldgen;
 
-import com.SprintXXL.primitiveoregen.library.data.DepositDefinition;
+import com.SprintXXL.primitiveoregen.library.Deposit;
 import com.SprintXXL.primitiveoregen.library.logic.DepositGenerator;
 import com.SprintXXL.primitiveoregen.library.registry.DepositRegistry;
 import com.SprintXXL.primitiveoregen.util.OreGenHelper;
@@ -22,7 +22,7 @@ public class PrimitiveOreWorldGenerator implements IWorldGenerator {
             int centerX = chunkX * 16 + 8;
             int centerZ = chunkZ * 16 + 8;
 
-            DepositDefinition chosenDeposit = DepositRegistry.getRandomDeposit(random);
+            Deposit chosenDeposit = DepositRegistry.getRandomDeposit(random);
 
             int centerY;
 
